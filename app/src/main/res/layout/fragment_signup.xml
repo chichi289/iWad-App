@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="@color/colorWhite"
+    tools:context=".ui.auth.SignUpFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonSignUp"
+        android:layout_alignParentTop="true"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_64sdp"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_24sdp"
+                android:layout_marginEnd="@dimen/_24sdp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/EditText_Hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="@string/first_name" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextFirstName"
+                    style="@style/EditText"
+                    android:imeOptions="actionNext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/EditText_Hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:text="@string/last_name" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextLastName"
+                    style="@style/EditText"
+                    android:imeOptions="actionNext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/EditText_Hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:text="@string/email" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextEmail"
+                    style="@style/EditText"
+                    android:imeOptions="actionNext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/EditText_Hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:text="@string/phone_number" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextPhoneNumber"
+                    style="@style/EditText"
+                    android:imeOptions="actionNext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/EditText_Hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:text="@string/password" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextPassword"
+                    style="@style/EditText"
+                    android:imeOptions="actionNext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/EditText_Hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:text="@string/confirm_password" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextConfirmPassword"
+                    style="@style/EditText"
+                    android:imeOptions="actionDone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonSignUp"
+        style="@style/Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textViewAlreadyAccount"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:text="@string/signup" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewAlreadyAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/source_sans_pro_semibold"
+        android:paddingBottom="@dimen/_8sdp"
+        android:textColor="@color/colorGray"
+        android:textSize="@dimen/_14ssp"
+        android:layout_alignParentBottom="true"
+        tools:text="You already have an account? Login" />
+
+
+
+</RelativeLayout>

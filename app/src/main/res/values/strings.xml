@@ -1,3 +1,30 @@
 <resources>
-    <string name="app_name">IWad App</string>
+    <string name="app_name">iWad</string>
+    <string name="welcome_to">Welcome to</string>
+    <string name="login">Login</string>
+    <string name="signup">Signup</string>>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="new_user">New User?</string>
+    <string name="forgot_your_password">Forgot your Password?</string>
+    <string name="please_enter_your_email_address_we_will_email_you_a_link_to_reset_your_password">Please enter your email address. We will email\n you a link to reset your password.</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="last_name">Last Name</string>
+    <string name="first_name">First Name</string>
+    <string name="you_already_have_an_account">You already have an account?</string>
+    <string name="send">Send</string>
+    <string name="search_for_location">Search For Location</string>
+    <string name="add_new_location">Add new Location</string>
+    <string name="please_enter_email">Please enter email</string>
+    <string name="please_enter_valid_email">Please enter valid email</string>
+    <string name="please_enter_password">Please enter password</string>
+    <string name="please_enter_first_name">Please enter first name</string>
+    <string name="please_enter_last_name">Please enter last name</string>
+    <string name="please_enter_phone_number">Please enter phone number</string>
+    <string name="please_enter_valid_phone_number">Please enter valid phone number</string>
+    <string name="please_enter_confirm_password">Please enter confirm password</string>
+    <string name="confirm_password_does_not_match">Confirm password does not match</string>
+    <string name="please_check_your_email_to_reset_password">Please check your email to reset password</string>
 </resources>

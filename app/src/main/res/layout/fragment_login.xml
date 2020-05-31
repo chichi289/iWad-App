@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:clickable="true"
+    android:focusable="true"
+    tools:context=".ui.auth.LoginFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLineStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLineEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewAppLogo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:src="@drawable/ic_app_logo"
+        app:layout_constraintDimensionRatio="H,32:9"
+        app:layout_constraintEnd_toStartOf="@id/guideLineEnd"
+        app:layout_constraintStart_toEndOf="@id/guideLineStart"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="@dimen/_0sdp"
+        android:layout_height="@dimen/_0sdp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideLineEnd"
+        app:layout_constraintStart_toEndOf="@id/guideLineStart"
+        app:layout_constraintTop_toBottomOf="@id/imageViewAppLogo">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_24sdp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/EditText_Hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/email" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextEmail"
+                    style="@style/EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/EditText_Hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/password" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextPassword"
+                    style="@style/EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewForgotPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:fontFamily="@font/source_sans_pro_semibold"
+                    android:padding="@dimen/_12sdp"
+                    android:paddingStart="@dimen/_12sdp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/forgot_password"
+                    android:textColor="@color/colorGray"
+                    android:textSize="@dimen/_14ssp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonLogin"
+                    style="@style/Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:layout_marginTop="@dimen/_24sdp"
+                    android:layout_marginEnd="@dimen/_6sdp"
+                    android:text="@string/login" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewNewUserSignUp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/_12sdp"
+                    android:fontFamily="@font/source_sans_pro_semibold"
+                    android:padding="@dimen/_12sdp"
+                    android:textColor="@color/colorGray"
+                    android:textSize="@dimen/_14ssp"
+                    tools:text="New User? Signup" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

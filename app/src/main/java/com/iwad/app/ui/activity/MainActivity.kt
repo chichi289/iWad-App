@@ -17,6 +17,9 @@ class MainActivity : BaseActivity() {
     }
 
     override fun createLayout(): Int = R.layout.activity_main
+    override fun navHostFragmentId(): Int {
+        return  0
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

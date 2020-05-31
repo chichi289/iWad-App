@@ -24,3 +24,7 @@ fun FragmentActivity.replaceFragment(fragment: Fragment, frameId: Int, backStack
         backStackTag?.let { addToBackStack(fragment.javaClass.name) }
     }
 }
+
+fun FragmentManager.getChildrenFragmentManager():FragmentManager?{
+    return primaryNavigationFragment?.childFragmentManager
+}
