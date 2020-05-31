@@ -7,6 +7,7 @@ import com.iwad.app.ui.activity.MainActivity
 import com.iwad.app.ui.base.BaseActivity
 import com.iwad.app.IWadApp
 import com.iwad.app.di.module.ViewModelModule
+import com.iwad.app.ui.home.fragment.HomeFragment
 import dagger.Component
 import javax.inject.Singleton
 
@@ -17,6 +18,7 @@ interface ApplicationComponent {
     fun inject(app: IWadApp)
     fun inject(app: MainActivity)
     fun inject(baseActivity: BaseActivity)
+    fun inject(homeFragment: HomeFragment)
 
     @Component.Builder
     interface Builder {

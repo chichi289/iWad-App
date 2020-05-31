@@ -13,6 +13,7 @@ import com.iwad.app.ui.base.BaseFragment
 import com.iwad.app.utils.text_decorator.OnTextClickListener
 import com.iwad.app.utils.text_decorator.TextDecorator
 import kotlinx.android.synthetic.main.fragment_login.*
+import timber.log.Timber
 
 class LoginFragment : BaseFragment(), View.OnClickListener {
 
@@ -24,6 +25,9 @@ class LoginFragment : BaseFragment(), View.OnClickListener {
 
     @SuppressLint("SetTextI18n")
     override fun bindData() {
+
+        Timber.e("Safe arg received ${safeArgs.userEmail}")
+
         textViewNewUserSignUp.text = "${getString(R.string.new_user)} ${getString(R.string.signup)}"
 
         TextDecorator.decorate(textViewNewUserSignUp, textViewNewUserSignUp.text.toString())
@@ -51,7 +55,9 @@ class LoginFragment : BaseFragment(), View.OnClickListener {
                     context?.toast(getString(R.string.please_enter_password))
                 }else{
                     activity?.let {
-                        startActivity(Intent(it, HomeActivity::class.java))
+                        val intent = Intent(it, HomeActivity::class.java)
+                        intent.putExtra("email",email)
+                        startActivity(intent)
                         it.finish()
                     }
                 }

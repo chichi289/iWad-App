@@ -8,7 +8,12 @@ import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.iwad.app.exception.AuthException
 import timber.log.Timber
+import java.net.ConnectException
+import java.net.SocketTimeoutException
+import javax.inject.Inject
 
 abstract class BaseFragment : Fragment() {
 
@@ -81,6 +86,23 @@ abstract class BaseFragment : Fragment() {
 
     override fun onDetach() {
         super.onDetach()
+    }
+
+    open fun onError(exception: Exception) {
+        when (exception) {
+            is ConnectException -> {
+                Timber.e("No Internet:-̥ $exception")
+            }
+            is SocketTimeoutException -> {
+                Timber.e("Time out:- $exception")
+            }
+            is AuthException -> {
+                Timber.e("AuthException:- $exception")
+            }
+            else -> {
+                Timber.e("Something went wrong:- $exception")
+            }
+        }
     }
 
 

@@ -25,10 +25,9 @@
         tools:layout="@layout/fragment_login" >
 
         <argument
-            android:name="testArgs"
+            android:name="user_email"
             app:argType="string"
             android:defaultValue='""'/>
-
 
         <action
             android:id="@+id/action_loginFragment_to_forgotPasswordFragment"

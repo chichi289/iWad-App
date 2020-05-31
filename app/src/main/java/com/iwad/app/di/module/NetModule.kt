@@ -1,6 +1,8 @@
 package com.iwad.app.di.module
 
 import com.iwad.app.IWadApp
+import com.iwad.app.api.URLFactory
+import com.iwad.app.api.core.NoConnectionInterceptor
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import dagger.Module
 import dagger.Provides
@@ -33,10 +35,18 @@ class NetModule {
 
     @Singleton
     @Provides
+    @Named("logging_interceptor")
     fun provideLoggingInterceptor(): HttpLoggingInterceptor {
         val httpLoggingInterceptor = HttpLoggingInterceptor()
         httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
         return httpLoggingInterceptor
+    }
+
+    @Singleton
+    @Provides
+    @Named("connection_interceptor")
+    fun provideConnectionInterceptors(context: IWadApp): NoConnectionInterceptor {
+        return NoConnectionInterceptor(context)
     }
 
 
@@ -44,26 +54,20 @@ class NetModule {
     @Provides
     fun provideOkhttp(
         @Named("header_interceptor") interceptor: Interceptor,
-        context: IWadApp
-    ): OkHttpClient {
-
-        val httpLoggingInterceptor = HttpLoggingInterceptor()
-        httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
-
+        @Named("logging_interceptor") httpLoggingInterceptor : HttpLoggingInterceptor,
+        @Named("connection_interceptor") noConnectionInterceptor : NoConnectionInterceptor): OkHttpClient {
         val okhttpBuilder = OkHttpClient.Builder()
         okhttpBuilder.addInterceptor(interceptor)
         okhttpBuilder.addInterceptor(httpLoggingInterceptor)
+        okhttpBuilder.addInterceptor(noConnectionInterceptor)
         return okhttpBuilder.build()
     }
 
     @Singleton
     @Provides
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
-        val httpLoggingInterceptor = HttpLoggingInterceptor()
-        httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
-        okHttpClient.newBuilder().addInterceptor(httpLoggingInterceptor).build()
         return Retrofit.Builder()
-            .baseUrl("https://jsonplaceholder.typicode.com")
+            .baseUrl(URLFactory.BASE_URL)
             .client(okHttpClient)
             .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .addConverterFactory(GsonConverterFactory.create())

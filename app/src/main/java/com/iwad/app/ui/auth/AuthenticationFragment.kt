@@ -30,7 +30,7 @@ class AuthenticationFragment : BaseFragment() {
             .build()
 
         buttonLogin.setOnClickListener {
-            findNavController().navigate(AuthenticationFragmentDirections.actionAuthenticationFragmentToLoginFragment().setTestArgs("Chirag"))
+            findNavController().navigate(AuthenticationFragmentDirections.actionAuthenticationFragmentToLoginFragment().setUserEmail("chiragrprajapati28@gmail.com"))
         }
 
         buttonSignUp.setOnClickListener {

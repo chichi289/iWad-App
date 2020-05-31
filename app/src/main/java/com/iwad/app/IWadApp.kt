@@ -7,6 +7,10 @@ import com.iwad.app.di.module.ApplicationModule
 import timber.log.Timber
 import javax.inject.Inject
 
+/**
+*  Developed by Chirag Prajapti
+* */
+
 class IWadApp:Application() {
     private lateinit var applicationComponent: ApplicationComponent
 

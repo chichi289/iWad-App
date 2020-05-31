@@ -27,4 +27,5 @@
     <string name="please_enter_confirm_password">Please enter confirm password</string>
     <string name="confirm_password_does_not_match">Confirm password does not match</string>
     <string name="please_check_your_email_to_reset_password">Please check your email to reset password</string>
+    <string name="post_id">Post id : %1$s</string>
 </resources>
